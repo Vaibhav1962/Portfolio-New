@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 import CityCanvas from './CityCanvas';
 import SectionContent from './Sections';
-import { ZOOM, signs, spots, type SectionId, type Spot } from './data';
+import { GLITCH_CARDS, NEON_CURSOR, ZOOM, signs, spots, type SectionId, type Spot } from './data';
+import { useCardGlitch, useNeonCursor, useSignFlicker } from './effects';
 
 const RESUME = '/Vaibhav_Singh_Resume.pdf';
 const DL = 'M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M7 10l5 5 5-5 M12 15V3';
@@ -98,6 +99,10 @@ export default function App() {
   }, []);
 
   const idle = phase === 'idle';
+  const flickRef = useRef<HTMLSpanElement>(null);
+  useNeonCursor(NEON_CURSOR);
+  useCardGlitch(GLITCH_CARDS, shown && !swap);
+  useSignFlicker(flickRef);
   const accentVars = { '--accent': cur.color, '--accent-glow': cur.color + '55', '--accent-border': cur.color + '99' } as CSSProperties;
 
   return (
@@ -151,13 +156,16 @@ export default function App() {
 
       <div className="hud" style={{ opacity: idle ? 1 : 0, pointerEvents: idle ? 'auto' : 'none' }} aria-hidden={!idle}>
         <div className="col gap6 mb8 no-pointer">
-          <h1 className="name">VAIBHAV SINGH</h1>
+          <div className="sign">
+            <h1 className="sign-name">VAIBHAV SIN<span ref={flickRef}>G</span>H</h1>
+            <div className="sign-kana">ヴァイバヴ・シン</div>
+          </div>
           <div className="subtitle">BACKEND ENGINEER // NOIDA, IN</div>
         </div>
         <div className="select">SELECT A NODE<span className="blink"> _</span></div>
         <nav className="wrap gap8" aria-label="Sections">
           {spots.map(s => (
-            <button key={s.id} className="navbtn" style={{ '--c': s.color } as CSSProperties} tabIndex={idle ? 0 : -1} onClick={() => open(s.id)}>
+            <button key={s.id} className="navbtn neon" style={{ '--c': s.color, '--g': s.color + '99' } as CSSProperties} tabIndex={idle ? 0 : -1} onClick={() => open(s.id)}>
               <Icon d={s.icon} color={s.color} size={14} />
               <span style={{ color: s.color }}>{s.num}.</span>{s.label}
             </button>

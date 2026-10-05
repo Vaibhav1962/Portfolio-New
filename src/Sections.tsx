@@ -15,12 +15,12 @@ function About() {
         Computer Science student at Jaypee Institute of Information Technology, most recently a backend intern at Drona Infotech, where I shipped billing, auth and HR systems on FastAPI and PostgreSQL. I came up through machine learning — one IEEE publication, a few fine-tuned models — and now spend most of my time on APIs, schemas and access control.
       </p>
       <div className="grid g200">
-        <div className="info-card">
+        <div className="info-card" data-glitch="1">
           <span className="label cyan">EDUCATION</span>
           <span className="white">B.Tech, Computer Science &amp; Engineering</span>
           <span className="muted small">JIIT Noida · Aug 2023 – May 2027</span>
         </div>
-        <div className="info-card">
+        <div className="info-card" data-glitch="1">
           <span className="label cyan">CGPA</span>
           <span className="white">7.11 / 10.0</span>
         </div>
@@ -69,7 +69,7 @@ function Projects() {
   return (
     <>
       {projects.map(p => (
-        <div key={p.title} className="card pink">
+        <div key={p.title} className="card pink" data-glitch="1">
           <div className="row-between"><h3 className="h3">{p.title}</h3><span className="muted small">{p.date}</span></div>
           <div className="stack">{p.stack}</div>
           <ul className="bullets">{p.bullets.map(b => <li key={b}>{b}</li>)}</ul>
@@ -81,7 +81,7 @@ function Projects() {
           )}
         </div>
       ))}
-      <div className="card cyan">
+      <div className="card cyan" data-glitch="1">
         <div className="label cyan">RESEARCH PUBLICATION · IEEE CICN 2024</div>
         <h3 className="h3 plain">Smart Retail: ML for Demand Prediction, Pricing and Inventory Management</h3>
         <ul className="bullets">
@@ -113,7 +113,7 @@ function Experience() {
       </div>
       <div className="col gap14">
         {duties.map(([lead, rest], i) => (
-          <div key={lead} className="duty">
+          <div key={lead} className="duty" data-glitch="1">
             <span className="cyan-text">[{String(i + 1).padStart(2, '0')}]</span>
             <span><b>{lead}</b> {rest}</span>
           </div>
@@ -136,7 +136,7 @@ function Skills() {
       <div className="muted prompt">$ cat ./stack.txt</div>
       <div className="grid g240">
         {skills.map(([l, v]) => (
-          <div key={l} className="card pink skill">
+          <div key={l} className="card pink skill" data-glitch="1">
             <span className="label pink-text">{l}</span>
             <span className="skill-val">{v}</span>
           </div>
@@ -159,7 +159,7 @@ function Contact() {
       <h2 className="h2 glow-amber">Open a channel.</h2>
       <div className="col contact-list">
         {contacts.map(([l, v, href, ext]) => (
-          <a key={l} href={href} className="contact-row" {...(ext ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+          <a key={l} href={href} className="contact-row" data-glitch="1" {...(ext ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
             <span className="amber-text label-sm">{l}</span>{v}
           </a>
         ))}

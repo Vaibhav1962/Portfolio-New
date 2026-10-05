@@ -43,3 +43,7 @@ export const signs: [number, number, number, number, string, string, number][] =
 ];
 
 export const ZOOM = 2.8;
+
+// effect toggles
+export const GLITCH_CARDS = true;
+export const NEON_CURSOR = true;

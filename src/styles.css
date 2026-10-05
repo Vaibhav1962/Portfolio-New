@@ -36,11 +36,19 @@ button{font-family:inherit}
 .gap6{gap:6px}.gap8{gap:8px}.gap10{gap:10px}.gap14{gap:14px}.gap16{gap:16px}.mb8{margin-bottom:8px}
 .name{margin:0;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(22px,3vw,38px);letter-spacing:.08em;color:#fff;text-shadow:0 0 12px rgba(95,243,255,.7),2px 0 0 rgba(255,79,184,.6)}
 .subtitle{font-size:12px;letter-spacing:.22em;color:#5ff3ff}
+.sign{align-self:flex-start;display:flex;flex-direction:column;align-items:flex-start;gap:.3em;font-size:clamp(20px,2.6vw,34px);padding:.45em .7em .5em;border:.08em solid rgba(255,150,215,.85);border-radius:.35em;background:rgba(10,4,18,.45);box-shadow:0 0 .4em rgba(255,79,184,.8),inset 0 0 .4em rgba(255,79,184,.45)}
+.sign-name{margin:0;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1em;letter-spacing:.14em;line-height:1;color:#ffe9f6;white-space:nowrap;text-shadow:0 0 .08em #fff,0 0 .25em #ff4fb8,0 0 .6em #ff4fb8,0 0 1.2em rgba(255,45,122,.7)}
+.sign-kana{font-size:.42em;letter-spacing:.5em;color:#e2fcff;white-space:nowrap;text-shadow:0 0 .3em #5ff3ff,0 0 .8em #5ff3ff}
 .select{font-size:11px;letter-spacing:.2em;color:#8b93b8}
 .blink{animation:blink 1s steps(1) infinite;color:#5ff3ff}
 .navbtn{font-size:12px;letter-spacing:.08em;color:#d9e2ff;background:rgba(6,8,22,.75);border:1px solid rgba(255,255,255,.18);padding:8px 12px;border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:7px;backdrop-filter:blur(6px)}
 .navbtn:hover,.navbtn:focus-visible{outline:none;border-color:var(--c);color:#fff;box-shadow:0 0 12px var(--c)}
 
+.navbtn.neon{color:#fff;border:1.5px solid var(--c);border-radius:6px;text-shadow:0 0 8px var(--g);box-shadow:0 0 8px var(--g),inset 0 0 6px var(--g);transition:box-shadow 200ms,background 200ms}
+.navbtn.neon svg{filter:drop-shadow(0 0 3px var(--c))}
+.navbtn.neon:hover,.navbtn.neon:focus-visible{background:rgba(255,255,255,.08);box-shadow:0 0 16px var(--c),inset 0 0 10px var(--c)}
+.navbtn.resume{border:1.5px solid #ffc46b;border-radius:6px;color:#fff;text-shadow:0 0 8px #ffc46b99;box-shadow:0 0 8px #ffc46b99,inset 0 0 6px #ffc46b99;transition:box-shadow 200ms,background 200ms}
+.navbtn.resume:hover{background:rgba(255,255,255,.08);box-shadow:0 0 16px #ffc46b,inset 0 0 10px #ffc46b}
 .overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:20px}
 .panel{position:relative;width:100%;max-width:940px;max-height:84vh;display:flex;flex-direction:column;outline:none;
   background:linear-gradient(180deg,rgba(12,14,36,.62),rgba(6,7,20,.8));backdrop-filter:blur(14px) saturate(1.4);
