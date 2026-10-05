@@ -148,7 +148,6 @@ function Skills() {
 
 const contacts: [string, string, string, boolean][] = [
   ['EMAIL', 'vaibhav.singh.252005@gmail.com', 'mailto:vaibhav.singh.252005@gmail.com', false],
-  ['PHONE', '+91 96547 36687', 'tel:+919654736687', false],
   ['LINKEDIN', 'in/vaibhav252005 ↗', 'https://linkedin.com/in/vaibhav252005', true],
   ['GITHUB', 'Vaibhav1962 ↗', 'https://github.com/Vaibhav1962', true],
   ['LEETCODE', 'user3723OG ↗', 'https://leetcode.com/u/user3723OG/', true],
