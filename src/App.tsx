@@ -3,6 +3,9 @@ import CityCanvas from './CityCanvas';
 import SectionContent from './Sections';
 import { ZOOM, signs, spots, type SectionId, type Spot } from './data';
 
+const RESUME = '/Vaibhav_Singh_Resume.pdf';
+const DL = 'M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M7 10l5 5 5-5 M12 15V3';
+
 type Phase = 'idle' | 'zoom' | 'open' | 'closing';
 
 const Icon = ({ d, color, size }: { d: string; color: string; size: number }) => (
@@ -159,6 +162,9 @@ export default function App() {
               <span style={{ color: s.color }}>{s.num}.</span>{s.label}
             </button>
           ))}
+          <a className="navbtn resume" href={RESUME} download tabIndex={idle ? 0 : -1}>
+            <Icon d={DL} color="#ffc46b" size={14} />RESUME
+          </a>
         </nav>
       </div>
 
@@ -207,6 +213,9 @@ export default function App() {
                 <span style={{ whiteSpace: 'nowrap' }}>{s.num}. {s.label}</span>
               </button>
             ))}
+            <a className="footbtn resume" href={RESUME} download>
+              <Icon d={DL} color="#ffc46b" size={13} />RESUME
+            </a>
           </div>
         </div>
       </div>
